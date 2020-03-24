@@ -5,4 +5,4 @@ My IP with Geolocation details.
 This Application use [Flask](http://flask.pocoo.org) with python as the web framework, please install Flask before running.
 >`pip install Flask` or `pip3 install Flask`
 
-Your also need an IP Geolocation API service(For example: (https://ipdata.co)) and its api key.
+Your also need an IP Geolocation API service such as [ipdata.co](https://ipdata.co) and fill in its api key before use.
