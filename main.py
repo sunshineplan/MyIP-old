@@ -4,14 +4,21 @@
 import requests
 from flask import Flask, jsonify, render_template, request
 
+try:
+    from metadata import metadata
+except:
+    def metadata(_, value): return value
+
 app = Flask(__name__)
 
-API = 'https://api.ipdata.co/{}?api-key=YOUR_API_KEY'
+API_KEY = metadata('myip_api_key', 'YOUR_API_KEY')
+
+API = f'https://api.ipdata.co/{{}}?api-key={API_KEY}'
 
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', API_KEY=API_KEY)
 
 
 @app.route('/query')

@@ -11,7 +11,7 @@ function getInfo(search = false) {
 };
 
 function doQuery(ip = '') {
-    var api = 'https://api.ipdata.co/{ip}?api-key=YOUR_API_KEY';
+    var api = 'https://api.ipdata.co/{ip}?api-key=' + API_KEY;
     if ($('#online').prop('checked')) {
         query('/query?ip=' + ip);
     } else {
