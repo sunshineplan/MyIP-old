@@ -3,7 +3,7 @@ Description=uWSGI instance to serve My IP
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/uwsgi --ini /var/www/MyIP/MyIP.ini
+ExecStart=/usr/bin/uwsgi --ini /var/www/myip/MyIP.ini
 
 [Install]
 WantedBy=multi-user.target
