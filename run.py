@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+from socket import gethostbyname
+
 import requests
 from flask import Flask, jsonify, render_template, request
 
@@ -24,11 +26,15 @@ def index():
 @app.route('/query')
 def query():
     remote = request.remote_addr
-    ip = request.args.get('ip', '')
-    if ip == '':
+    query = request.args.get('ip', '')
+    if query == '':
         respone = requests.get(API.format(remote))
     else:
-        respone = requests.get(API.format(ip))
+        try:
+            query = gethostbyname(query)
+        except:
+            pass
+        respone = requests.get(API.format(query))
     return jsonify(respone.json()), respone.status_code
 
 
