@@ -9,6 +9,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>My IP</title>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ipaddr.js/1.9.1/ipaddr.min.js'></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css' rel='stylesheet'>
     <link rel='stylesheet' href="{{ url_for('static', filename='style.css') }}">
@@ -45,7 +46,7 @@
         </div>
     </header>
     <div class='input-group search'>
-        <input class='form-control' placeholder='IPv4 or IPv6' id='input'>
+        <input class='form-control' placeholder='IPv4 or IPv6 or Host' id='input'>
         <div class='input-group-append'>
           <button class='btn btn-outline-primary' type='button' onclick='getInfo(true)' id='search'>Search</button>
           <button class='btn btn-outline-danger' type='button' onclick='getInfo()'>Reset</button>

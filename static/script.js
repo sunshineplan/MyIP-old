@@ -15,7 +15,12 @@ function doQuery(ip = '') {
     if ($('#online').prop('checked')) {
         query('/query?ip=' + ip);
     } else {
-        query(api.replace('{ip}', ip));
+        if (ip == '' || ipaddr.isValid(ip)) {
+            query(api.replace('{ip}', ip));
+        } else {
+            console.log('Host must be searched on server side.');
+            query('/query?ip=' + ip);
+        };
     };
 };
 
