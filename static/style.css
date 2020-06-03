@@ -47,6 +47,10 @@ tr {
     box-shadow: 2px 2px 4px 2px #ccc;
 }
 
+.swal {
+    margin: 8px 6px;
+}
+
 .loading {
     width: 1em;
     height: 1em;
